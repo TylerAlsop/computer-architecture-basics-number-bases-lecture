@@ -11,7 +11,7 @@ PRINT_NUM = 3               #0b00000011
  # Etc.
 
 
-# Print "Hellow World"
+# Print "Hello World"
 # Print 5
 # Return
 
@@ -42,15 +42,16 @@ while running:
         pc += 1
 
     elif instruction == PRINT_NUM:
-        pc += 1
-        print(memory[pc])
+        num = memory[pc + 1]
+        print(num)
+        pc += 2
 
     elif instruction == HALT:
         # print hello world
-        print("The program is now ending. Thanks for playing.")
+        print("The program has reached a HALT function and is now ending. Thanks for playing.")
         running = False
 
     else:
-        print(f'Unknown instruction: {instruction}. The program will now exit.')
+        print(f'Unknown instruction: {instruction}. The program will now exit / crash.')
         running = False
         sys.exit(1)
