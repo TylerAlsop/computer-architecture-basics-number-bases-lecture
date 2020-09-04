@@ -1,0 +1,14 @@
+# PROGRAM ADDS 200 AND 2121 TOGETHER
+
+4       # SAVE_REG
+200
+1
+4       # SAVE_REG
+2121    # VALUE TO SAVE
+2       # REG TO SAVE TO
+6       # ADD REG 1 AND 2
+1
+2
+5       # PRINT REG
+1
+2
