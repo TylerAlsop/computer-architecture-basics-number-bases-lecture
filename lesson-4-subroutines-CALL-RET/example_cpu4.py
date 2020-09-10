@@ -10,6 +10,8 @@ PRINT_REG           = 5
 ADD                 = 6     # ADD takes 2 registers, adds their values and stores the result in the first register given
 PUSH                = 7
 POP                 = 8
+CALL                = 9
+RET                 = 10
 
 
 memory = [0] * 256
@@ -116,6 +118,22 @@ while running:
         # increment the stack pointer
         registers[SP] += 1
         pc += 2
+
+    elif instruction == CALL:
+        # Get the given register in the operand
+        given_register = memory[pc + 1]
+        # Store the return address (PC + 2) onto the stack
+        registers[SP] -= 1
+        # write the return address
+        memory[registers[SP]] = pc + 2
+        # Set PC to the value inside given_register
+        pc = registers[given_register]
+
+    elif instruction == RET:
+        # Set PC to the value at the top of the stack
+        pc = memory[registers[SP]]
+        # POP from the stack
+        registers[SP] += 1
 
     elif instruction == HALT:
         # print hello world
