@@ -84,6 +84,11 @@
 a = 0b01011010
 b = 0b10101111
 
+c = 0b110
+d = 0b011
+
+e = 0b11010111
+
 print(f'a AND b: {bin(a & b)}')
 print(f'a OR b: {bin(a | b)}')
 print(f'a X-OR b: {bin(a ^ b)}')
@@ -92,3 +97,10 @@ print(f'NOT b: {bin( ~b )}')
 
 
 print(f'Challenge: {bin((a | b) ^ (a & b))}')
+
+
+print(f'c AND d: {bin(c & d)}')
+
+print(f'bin to hex e: {hex(e)}')
+
+
